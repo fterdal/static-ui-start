@@ -19,12 +19,11 @@
   height: 50px;
   width: 100%; }
   .selection-list .selection {
-    text-align: center;
-    display: inline-block;
-    border-style: solid;
-    border-color: #6A7B76;
-    border-width: 2px;
-    margin: 5px; }
-  .selection-list ::after {
-    content: "";
-    clear: both; }
+    text-align: left;
+    display: block;
+    width: 100%;
+    margin: 5px 0; }
+
+.our-dropdown {
+  width: 75%;
+  display: block; }

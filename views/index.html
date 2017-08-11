@@ -2,24 +2,24 @@
 
 <div class="row selection-list">
 
-  <div class="selection col-sm-4">
-    <select name="hotel">
+  <div class="selection col-sm-12">
+    <select class="our-dropdown" name="hotel">
       {% for hotel in hotels %}
       <option value={{hotel.id}}>{{hotel.name}}</option>
       {% endfor %}
     </select>
   </div>
 
-  <div class="selection col-sm-4">
-    <select name="activity">
+  <div class="selection col-sm-12">
+    <select class="our-dropdown" name="activity">
       {% for activity in activities %}
       <option value={{activity.id}}>{{activity.name}}</option>
       {% endfor %}
     </select>
   </div>
 
-  <div class="selection col-sm-4">
-    <select name="restaurant">
+  <div class="selection col-sm-12">
+    <select class="our-dropdown" name="restaurant">
       {% for restaurant in restaurants %}
       <option value={{restaurant.id}}>{{restaurant.name}}</option>
       {% endfor %}
