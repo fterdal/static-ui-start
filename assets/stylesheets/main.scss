@@ -3,18 +3,49 @@ $DavyGrey :    #595959;
 $RichBlack :   #040303;
 $SpringBud :   #506B29;
 $Smoke :       #6A7B76;
-$TrolleyGrey : #7F7F7F;
+$AshGrey :     #B2B2B2;
 
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+
 .navbar {
-  height: 5rem;
+  height: 40px;
   background-color: $RichBlack;
   text-align: center;
 
   span {
-      color: $TrolleyGrey;
+      color: $AshGrey;
   }
+}
+ 
+.content {
+    width: 100%;
+    font-size: 2rem;
+    //border: solid 5px black;
+    ::after {
+        content:"";
+        clear: both;
+    }
+}
+
+.selection-list {
+    height: 50px;
+    width: 100%;
+
+    .selection {
+        text-align: center;
+        display: inline-block;
+        border-style: solid;
+        border-color: $Smoke;
+        border-width: 2px;
+        margin: 5px;
+    }
+
+    ::after {
+        content:"";
+        clear: both;
+    }
 }
