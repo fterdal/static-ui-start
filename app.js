@@ -3,6 +3,7 @@ const volleyball = require("volleyball");
 const bodyparser = require("body-parser");
 const path = require("path");
 const nunjucks = require("nunjucks");
+const router = require("./routes");
 
 const app = express();
 app.use(volleyball);
@@ -10,6 +11,8 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, "public")));
+app.use('/bootstrap', express.static(path.join(__dirname, "node_modules/bootstrap/dist")));
+app.use('/jquery', express.static(path.join(__dirname, "node_modules/jquery/dist")));
 
 // function static(directory) {
 //   return function(req, res, next) {
@@ -30,9 +33,11 @@ app.engine('html', nunjucks.render);
 app.set('view engine', 'html');
 nunjucks.configure('views', { noCache: true });
 
-app.get('/', function(req, res){
-  res.render('index', {message: "hello!"})
-});
+// app.get('/', function(req, res){
+//   res.render('index', {message: "hello!"})
+// });
+
+app.use('/', router);
 
 app.use("*", function(req, res, next) {
   const err = new Error('Page not found');
